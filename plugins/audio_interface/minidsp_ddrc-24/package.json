@@ -9,13 +9,14 @@
 	"author": "Florian Angulanza",
 	"license": "ISC",
 	"volumio_info": {
-		"prettyName": "minidsp_ddrc-24",
+		"prettyName": "MiniDSP DDRC-24 Controller",
 		"icon": "fa-lightbulb-o",
 		"plugin_type": "audio_interface"
 	},
 	"dependencies": {
 		"fs-extra": "^0.28.0",
 		"kew": "^0.7.0",
-		"v-conf": "^1.4.0"
+		"v-conf": "^1.4.0",
+		"node-minidsp24": ">=0.1.0"
 	}
 }

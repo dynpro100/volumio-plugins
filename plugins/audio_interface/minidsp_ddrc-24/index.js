@@ -7,8 +7,8 @@ var exec = require('child_process').exec;
 var execSync = require('child_process').execSync;
 
 
-module.exports = minidspDdrc-24;
-function minidspDdrc-24(context) {
+module.exports = minidspDdrc24;
+function minidspDdrc24(context) {
 	var self = this;
 
 	this.context = context;
@@ -20,7 +20,7 @@ function minidspDdrc-24(context) {
 
 
 
-minidspDdrc-24.prototype.onVolumioStart = function()
+minidspDdrc24.prototype.onVolumioStart = function()
 {
 	var self = this;
 	var configFile=this.commandRouter.pluginManager.getConfigurationFile(this.context,'config.json');
@@ -30,7 +30,7 @@ minidspDdrc-24.prototype.onVolumioStart = function()
     return libQ.resolve();
 }
 
-minidspDdrc-24.prototype.onStart = function() {
+minidspDdrc24.prototype.onStart = function() {
     var self = this;
 	var defer=libQ.defer();
 
@@ -41,7 +41,7 @@ minidspDdrc-24.prototype.onStart = function() {
     return defer.promise;
 };
 
-minidspDdrc-24.prototype.onStop = function() {
+minidspDdrc24.prototype.onStop = function() {
     var self = this;
     var defer=libQ.defer();
 
@@ -51,7 +51,7 @@ minidspDdrc-24.prototype.onStop = function() {
     return libQ.resolve();
 };
 
-minidspDdrc-24.prototype.onRestart = function() {
+minidspDdrc24.prototype.onRestart = function() {
     var self = this;
     // Optional, use if you need it
 };
@@ -59,7 +59,7 @@ minidspDdrc-24.prototype.onRestart = function() {
 
 // Configuration Methods -----------------------------------------------------------------------------
 
-minidspDdrc-24.prototype.getUIConfig = function() {
+minidspDdrc24.prototype.getUIConfig = function() {
     var defer = libQ.defer();
     var self = this;
 
@@ -83,17 +83,17 @@ minidspDdrc-24.prototype.getUIConfig = function() {
 };
 
 
-minidspDdrc-24.prototype.setUIConfig = function(data) {
+minidspDdrc24.prototype.setUIConfig = function(data) {
 	var self = this;
 	//Perform your installation tasks here
 };
 
-minidspDdrc-24.prototype.getConf = function(varName) {
+minidspDdrc24.prototype.getConf = function(varName) {
 	var self = this;
 	//Perform your installation tasks here
 };
 
-minidspDdrc-24.prototype.setConf = function(varName, varValue) {
+minidspDdrc24.prototype.setConf = function(varName, varValue) {
 	var self = this;
 	//Perform your installation tasks here
 };
@@ -104,14 +104,14 @@ minidspDdrc-24.prototype.setConf = function(varName, varValue) {
 // If your plugin is not a music_sevice don't use this part and delete it
 
 
-minidspDdrc-24.prototype.addToBrowseSources = function () {
+minidspDdrc24.prototype.addToBrowseSources = function () {
 
 	// Use this function to add your music service plugin to music sources
     //var data = {name: 'Spotify', uri: 'spotify',plugin_type:'music_service',plugin_name:'spop'};
     this.commandRouter.volumioAddToBrowseSources(data);
 };
 
-minidspDdrc-24.prototype.handleBrowseUri = function (curUri) {
+minidspDdrc24.prototype.handleBrowseUri = function (curUri) {
     var self = this;
 
     //self.commandRouter.logger.info(curUri);
@@ -124,63 +124,63 @@ minidspDdrc-24.prototype.handleBrowseUri = function (curUri) {
 
 
 // Define a method to clear, add, and play an array of tracks
-minidspDdrc-24.prototype.clearAddPlayTrack = function(track) {
+minidspDdrc24.prototype.clearAddPlayTrack = function(track) {
 	var self = this;
-	self.commandRouter.pushConsoleMessage('[' + Date.now() + '] ' + 'minidspDdrc-24::clearAddPlayTrack');
+	self.commandRouter.pushConsoleMessage('[' + Date.now() + '] ' + 'minidspDdrc24::clearAddPlayTrack');
 
 	self.commandRouter.logger.info(JSON.stringify(track));
 
 	return self.sendSpopCommand('uplay', [track.uri]);
 };
 
-minidspDdrc-24.prototype.seek = function (timepos) {
-    this.commandRouter.pushConsoleMessage('[' + Date.now() + '] ' + 'minidspDdrc-24::seek to ' + timepos);
+minidspDdrc24.prototype.seek = function (timepos) {
+    this.commandRouter.pushConsoleMessage('[' + Date.now() + '] ' + 'minidspDdrc24::seek to ' + timepos);
 
     return this.sendSpopCommand('seek '+timepos, []);
 };
 
 // Stop
-minidspDdrc-24.prototype.stop = function() {
+minidspDdrc24.prototype.stop = function() {
 	var self = this;
-	self.commandRouter.pushConsoleMessage('[' + Date.now() + '] ' + 'minidspDdrc-24::stop');
+	self.commandRouter.pushConsoleMessage('[' + Date.now() + '] ' + 'minidspDdrc24::stop');
 
 
 };
 
 // Spop pause
-minidspDdrc-24.prototype.pause = function() {
+minidspDdrc24.prototype.pause = function() {
 	var self = this;
-	self.commandRouter.pushConsoleMessage('[' + Date.now() + '] ' + 'minidspDdrc-24::pause');
+	self.commandRouter.pushConsoleMessage('[' + Date.now() + '] ' + 'minidspDdrc24::pause');
 
 
 };
 
 // Get state
-minidspDdrc-24.prototype.getState = function() {
+minidspDdrc24.prototype.getState = function() {
 	var self = this;
-	self.commandRouter.pushConsoleMessage('[' + Date.now() + '] ' + 'minidspDdrc-24::getState');
+	self.commandRouter.pushConsoleMessage('[' + Date.now() + '] ' + 'minidspDdrc24::getState');
 
 
 };
 
 //Parse state
-minidspDdrc-24.prototype.parseState = function(sState) {
+minidspDdrc24.prototype.parseState = function(sState) {
 	var self = this;
-	self.commandRouter.pushConsoleMessage('[' + Date.now() + '] ' + 'minidspDdrc-24::parseState');
+	self.commandRouter.pushConsoleMessage('[' + Date.now() + '] ' + 'minidspDdrc24::parseState');
 
 	//Use this method to parse the state and eventually send it with the following function
 };
 
 // Announce updated State
-minidspDdrc-24.prototype.pushState = function(state) {
+minidspDdrc24.prototype.pushState = function(state) {
 	var self = this;
-	self.commandRouter.pushConsoleMessage('[' + Date.now() + '] ' + 'minidspDdrc-24::pushState');
+	self.commandRouter.pushConsoleMessage('[' + Date.now() + '] ' + 'minidspDdrc24::pushState');
 
 	return self.commandRouter.servicePushState(state, self.servicename);
 };
 
 
-minidspDdrc-24.prototype.explodeUri = function(uri) {
+minidspDdrc24.prototype.explodeUri = function(uri) {
 	var self = this;
 	var defer=libQ.defer();
 
@@ -189,7 +189,7 @@ minidspDdrc-24.prototype.explodeUri = function(uri) {
 	return defer.promise;
 };
 
-minidspDdrc-24.prototype.getAlbumArt = function (data, path) {
+minidspDdrc24.prototype.getAlbumArt = function (data, path) {
 
 	var artist, album;
 
@@ -228,7 +228,7 @@ minidspDdrc-24.prototype.getAlbumArt = function (data, path) {
 
 
 
-minidspDdrc-24.prototype.search = function (query) {
+minidspDdrc24.prototype.search = function (query) {
 	var self=this;
 	var defer=libQ.defer();
 
@@ -237,19 +237,19 @@ minidspDdrc-24.prototype.search = function (query) {
 	return defer.promise;
 };
 
-minidspDdrc-24.prototype._searchArtists = function (results) {
+minidspDdrc24.prototype._searchArtists = function (results) {
 
 };
 
-minidspDdrc-24.prototype._searchAlbums = function (results) {
+minidspDdrc24.prototype._searchAlbums = function (results) {
 
 };
 
-minidspDdrc-24.prototype._searchPlaylists = function (results) {
+minidspDdrc24.prototype._searchPlaylists = function (results) {
 
 
 };
 
-minidspDdrc-24.prototype._searchTracks = function (results) {
+minidspDdrc24.prototype._searchTracks = function (results) {
 
 };
