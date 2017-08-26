@@ -1,0 +1,21 @@
+{
+	"name": "minidsp_ddrc24",
+	"version": "1.0.0",
+	"description": "Provides access to MiniDSP DDRC-24 hardware (Set/get volume, set/get input, ...)",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Florian Angulanza",
+	"license": "ISC",
+	"volumio_info": {
+		"prettyName": "minidsp_ddrc24",
+		"icon": "fa-lightbulb-o",
+		"plugin_type": "miscellanea"
+	},
+	"dependencies": {
+		"fs-extra": "^0.28.0",
+		"kew": "^0.7.0",
+		"v-conf": "^1.4.0"
+	}
+}
